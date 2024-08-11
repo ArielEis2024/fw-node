@@ -1,0 +1,28 @@
+{
+  "name": "fw-node",
+  "version": "1.0.0",
+  "description": "NodeJS server framework",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArielEis2024/fw-node.git"
+  },
+  "author": "Ariel Eisenstein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArielEis2024/fw-node/issues"
+  },
+  "homepage": "https://github.com/ArielEis2024/fw-node#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-fns": "^3.6.0",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.2.0"
+  }
+}
