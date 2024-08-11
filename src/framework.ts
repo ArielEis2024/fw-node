@@ -62,7 +62,7 @@ export class FrameWork {
     }
 
     public listen() {
-        this.engine.listen(parseInt(this.config.port))
+        this.engine.listen(parseInt(`${this.config.port}`))
         this.logger.info('\x1b[32m' + this.config.name, `listening on port: ${this.config.port}\x1b[0m\n`, '', true)
     }
 }
