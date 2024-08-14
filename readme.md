@@ -4,19 +4,13 @@ An express-based node framework that wraps all api endpoints with a controller t
 
 ## Installation
 Using npm:
-`
-$ npm install fw-node
-` 
+<code>$ npm install fw-node &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </code>
 
 Using yarn:
-`
-$ yarn add fw-node
-`
+<code>$ yarn add fw-node &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </code>
 
 Using pnpm:
-`
-$ pnpm add fw-node
-`
+<code>$ pnpm add fw-node &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </code>
 
 ## Usage
 
@@ -35,7 +29,7 @@ createFramework({<br />
   &nbsp; &nbsp; port: 4000,<br />
   &nbsp; &nbsp; name: 'FW-Server',<br />
 }, [])<br />
-<code/>
+</code>
 
 createFramework function can receive the following parameters in the first arg:
 
@@ -65,7 +59,7 @@ import { createEndpoint } from 'fw-node'<br/>
       &nbsp; &nbsp; &nbsp; &nbsp; return data<br/>
     &nbsp; &nbsp; }))<br/>
   &nbsp; }})<br/>
-<code/>
+</code>
 
 createFramework function can receive the following parameters:
 
@@ -87,5 +81,5 @@ const getDataByIdRoute = {<br/>
   &nbsp; &nbsp;path: '/data/:id',<br/>
   &nbsp; &nbsp;endpoint: myEndpoint<br/>
 }
-<code>
+</code>
 
