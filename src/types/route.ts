@@ -5,5 +5,5 @@ export interface IRoute {
   method: typeof METHODS[number]
   path: string;
   endpoint: typeof Endpoint;
-  withBinaryUpload?: boolean;
+  setMiddleware: () => any;
 }

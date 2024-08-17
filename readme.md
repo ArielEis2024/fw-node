@@ -39,7 +39,6 @@ createFramework function can receive the following parameters in the first arg:
 | name         | string       |name of your service basically used for logs         |
 | logLevel     | debug, info, warning, error| level of logs to print |
 |jsonLimitSize| string   | express json limit|
-|uploadLimitSize| string | maximum upload size when using binary endpoint|
 
 createFramework receive array of routes in the second arg
 
@@ -80,6 +79,21 @@ const getDataByIdRoute = {<br/>
   &nbsp; &nbsp;method: 'GET',<br/>
   &nbsp; &nbsp;path: '/data/:id',<br/>
   &nbsp; &nbsp;endpoint: myEndpoint<br/>
+}
+</code>
+
+you can also create new route with middleware in the following way:
+
+<code>
+const getDataByIdRoute = {<br/>
+  &nbsp; &nbsp;method: 'POST',<br/>
+  &nbsp; &nbsp;path: '/upload/file',<br/>
+  &nbsp; &nbsp;endpoint: myUploadEndpoint<br/>
+  &nbsp; &nbsp;setMiddleware: () => {<br/>
+  &nbsp; &nbsp; &nbsp; &nbsp;import multer from 'multer';<br/>
+  &nbsp; &nbsp; &nbsp; &nbsp;const upload = multer({ dest: 'uploads/' })<br/>
+  &nbsp; &nbsp; &nbsp; &nbsp;return upload.single('file')<br/>
+  &nbsp; &nbsp;}<br/>
 }
 </code>
 

@@ -19,7 +19,6 @@ export class FrameWork {
             port: config.port,
             jsonLimitSize: config.jsonLimitSize || '10mb',
             name: config.name || 'fw-node server',
-            uploadLimitSize: config.uploadLimitSize || '500mb',
             logLevel: config.logLevel || LOG_LEVELS[1]
         }
 
@@ -39,13 +38,15 @@ export class FrameWork {
         this.engine.get(path, new Controller(endpoint, this.logger).mount())
     }
 
-    public put(path: string, endpoint: typeof Endpoint, withBinaryUpload = false) {
-        const uploadBinary = withBinaryUpload ? bodyParser.raw({limit: this.config.uploadLimitSize, type: '*'}) : bodyParser()
+    public put(path: string, endpoint: typeof Endpoint, setMiddleware = () => null) {
+        const middleware = setMiddleware()
+        const uploadBinary = middleware ? middleware : bodyParser()
         this.engine.put(path, uploadBinary, new Controller(endpoint, this.logger).mount())
     }
 
-    public post(path: string, endpoint: typeof Endpoint, withBinaryUpload = false) {
-        const uploadBinary = withBinaryUpload ? bodyParser.raw({limit: this.config.uploadLimitSize, type: '*'}) : bodyParser()
+    public post(path: string, endpoint: typeof Endpoint, setMiddleware = () => null) {
+        const middleware = setMiddleware()
+        const uploadBinary = middleware ? middleware : bodyParser()
         this.engine.post(path, uploadBinary, new Controller(endpoint, this.logger).mount())
     }
 

@@ -8,10 +8,10 @@ export const setAllRoutes = (fw: FrameWork, routes: IRoute[]) => {
         fw.get(route.path, route.endpoint)
         break
       case 'PUT':
-        fw.put(route.path, route.endpoint, route.withBinaryUpload)
+        fw.put(route.path, route.endpoint, route.setMiddleware)
         break
       case 'POST':
-        fw.post(route.path, route.endpoint, route.withBinaryUpload)
+        fw.post(route.path, route.endpoint, route.setMiddleware)
         break
       case 'DELETE':
         fw.delete(route.path, route.endpoint)
