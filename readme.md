@@ -85,7 +85,7 @@ const getDataByIdRoute = {<br/>
 you can also create new route with middleware in the following way:
 
 <code>
-const getDataByIdRoute = {<br/>
+const postUploadFile = {<br/>
   &nbsp; &nbsp;method: 'POST',<br/>
   &nbsp; &nbsp;path: '/upload/file',<br/>
   &nbsp; &nbsp;endpoint: myUploadEndpoint<br/>
